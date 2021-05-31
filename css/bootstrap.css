@@ -10967,7 +10967,7 @@ fieldset:disabled .btn {
 }
 
 body {
-  background-image: linear-gradient(#7D7E84 0%, #C3C3C3 3%, #C3C3C3 80%, #511D12 100%);
+  background-image: linear-gradient(#7D7E84 0%, #C3C3C3 3%, #C3C3C3 80%, #000000 95%, #000000 100%);
   text-shadow: 0 0 1px rgba(1, 0, 0, 0.3), 0 0 2px rgba(1, 0, 0, 0.3), 0 0 5px rgba(1, 0, 0, 0.2);
 }
 
@@ -11519,3 +11519,8 @@ legend {
 body {
   padding-top: 70px;
 }
+
+        .navbar
+        {
+            border-bottom:5px solid #000;
+        }
