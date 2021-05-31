@@ -1,311 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>three.js webgl - mirror</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<link type="text/css" rel="stylesheet" href="main.css">
-		<style>
-			body {
-				color: #444;
-			}
-			a {
-				color: #08f;
-			}
-		</style>
-	</head>
-	<body>
+  <head>
+    <meta charset="utf-8">
+    <title>Collar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+  </head>
+  <body>
+ <nav class="navbar fixed-top navbar-dark bg-primary navbar-expand-md bg-faded justify-content-center">
+    <div class="container">
+        <a href="/" class="navbar-brand d-flex w-50 me-auto"><img src="/img/dithered_Collar_logo.png" alt="" width="170" height="42"></a>
+	
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsingNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse w-100" id="collapsingNavbar">
+            <ul class="navbar-nav w-100 justify-content-center">
+                <li class="nav-item">
+                    <button type="button" class="btn btn-light">APP</button>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav ms-auto w-100 justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">DOCS</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> SOCIAL </a>
+                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarScrollingDropdown">
+                        <li><a class="dropdown-item" href="#">Item</a></li>
+                        <li><a class="dropdown-item" href="#">Item</a></li>
+                        <li><a class="dropdown-item" href="#">Item</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+        
 
-		<div id="container"></div>
-		<div id="info"><a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> - mirror
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card">
+				<h6 class="card-header bg-primary">
+<img src="/img/dithered_Collar_logo_sm.png" alt="" width="20" height="20">&nbsp; COLLAR - OPTIMIZED STABLECOIN LENDING (TM) &nbsp;&nbsp;	/home/Collar/V1 &nbsp;&nbsp; <span id="clock"></span> 
+				</h6>
+				<div class="card-body">
+					<div class="row">
+		<div class="col-md-8">
+			<div class="card">
+				<h6 class="card-header bg-primary">
+					Tailor97.Tool | System.Features System.Copy
+				</h6>
+				<div class="card-body">
+					<p class="card-text">
+						Card content
+					</p>
+				</div>
+			</div>
 		</div>
-
-		<script type="module">
-
-			import * as THREE from './build/three.module.js';
-
-			import { OrbitControls } from './jsm/controls/OrbitControls.js';
-			import { Reflector } from './jsm/objects/Reflector.js';
-			import { GLTFLoader } from './jsm/loaders/GLTFLoader.js';
-			import { SimplifyModifier } from './jsm/modifiers/SimplifyModifier.js';
-
-			let camera, scene, renderer;
-
-			let cameraControls;
-
-			let sphereGroup, smallSphere, smallSphere2, smallSphere3, smallSphere4;
-
-			let groundMirror, groundMirror2;
-			
-
-			init();
-			animate();
-
-			function init() {
-
-				const container = document.getElementById( 'container' );
-
-				// renderer
-				renderer = new THREE.WebGLRenderer( { antialias: true } );
-				renderer.setPixelRatio( window.devicePixelRatio );
-				renderer.setSize( window.innerWidth, window.innerHeight );
-				container.appendChild( renderer.domElement );
-
-				// scene
-				scene = new THREE.Scene();
-
-				// camera
-				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 1000 );
-				camera.position.set( 0, 200, 280 );
-
-				cameraControls = new OrbitControls( camera, renderer.domElement );
-				cameraControls.target.set( 0, 200, 0 );
-				cameraControls.maxDistance = 210;
-				cameraControls.minDistance = 40;
-				cameraControls.update();
-
-
-				//
-
-				new GLTFLoader().load( "models/gltf/LeePerrySmith/LeePerrySmith.glb", function ( gltf ) {
-
-					const mesh = gltf.scene.children[ 0 ];
-					//mesh.position.x = - 3;
-					//mesh.rotation.y = Math.PI / 2;
-					
-
-					const modifier = new SimplifyModifier();
-
-					const simplified = mesh.clone();
-					simplified.material = simplified.material.clone();
-					simplified.material.flatShading = true;
-					const count = Math.floor( simplified.geometry.attributes.position.count * 0.875 ); // number of vertices to remove
-					simplified.geometry = modifier.modify( simplified.geometry, count );
-					
-					simplified.scale.set(4, 4, 4);
-					simplified.position.y = 230;
-					//simplified.rotation.y = Math.PI / 2;
-					scene.add( simplified );
-
-					render();
-
-				} );
-
-				const planeGeo = new THREE.PlaneGeometry( 400.1, 400.1 );
-
-				// reflectors/mirrors
-
-				let geometry, material;
-
-				geometry = new THREE.PlaneGeometry( 400.1, 400.1 );
-				groundMirror = new Reflector( geometry, {
-					clipBias: 0.003,
-					textureWidth: window.innerWidth * window.devicePixelRatio,
-					textureHeight: window.innerHeight * window.devicePixelRatio,
-					color: 0x777777
-				} );
-				groundMirror.position.y = 0.5;
-				groundMirror.rotateX( - Math.PI / 2 );
-				scene.add( groundMirror );
-
-				groundMirror2 = new Reflector( geometry, {
-					clipBias: 0.003,
-					textureWidth: window.innerWidth * window.devicePixelRatio,
-					textureHeight: window.innerHeight * window.devicePixelRatio,
-					color: 0x777777
-				} );
-				groundMirror2.position.y = 400;
-				groundMirror2.rotateX( - Math.PI / 2 );
-				groundMirror2.rotateY( Math.PI );
-				
-				scene.add( groundMirror2 );
-
-
-				sphereGroup = new THREE.Object3D();
-				scene.add( sphereGroup );
-
-				const texture_logo = new THREE.TextureLoader().load( 'textures/logo1.png' );
-				const material_logo = new THREE.MeshPhongMaterial( { map: texture_logo }, { gradientMap: texture_logo } );
-				
-				geometry = new THREE.SphereGeometry( 30, 32, 32, Math.PI / 2, Math.PI, Math.PI/3, Math.PI/3);
-				const halfSphere = new THREE.Mesh( geometry, material_logo );
-				const halfSphere2 = new THREE.Mesh( geometry, material_logo );
-
-				const material_logo6 = new THREE.MeshPhongMaterial( { color: 0xffffff, emissive: 0x444444 } );
-
-				geometry = new THREE.CircleGeometry(27, 32);
-				const cap = new THREE.Mesh( geometry, material_logo6 );
-
-				const cap2 = new THREE.Mesh( geometry, material_logo6 );
-				
-				halfSphere.position.y = 200;
-				halfSphere2.position.y = 200;
-				halfSphere2.rotateY(Math.PI/3 + Math.PI);
-				halfSphere.rotateY(Math.PI/3);
-				cap.position.y = 215;
-				cap.rotateX(-Math.PI/2);
-				cap2.position.y = 185;
-				cap2.rotateX(-Math.PI/2);
-				cap2.rotateY(Math.PI);
-
-				sphereGroup.add( halfSphere );
-				sphereGroup.add( halfSphere2 );
-				sphereGroup.add( cap );
-				sphereGroup.add( cap2 );
-
-				geometry = new THREE.CylinderGeometry( 15, 15, 3, 32 );
-
-				const texture_logo2 = new THREE.TextureLoader().load( 'textures/logo2.png' );
-				const material_logo2 = new THREE.MeshPhongMaterial( { map: texture_logo2 }, { gradientMap: texture_logo2 } );
-				smallSphere = new THREE.Mesh( geometry, material_logo2 );
-				scene.add( smallSphere );
-
-				const texture_logo3 = new THREE.TextureLoader().load( 'textures/logo3.png' );
-				const material_logo3 = new THREE.MeshPhongMaterial( { map: texture_logo3 }, { gradientMap: texture_logo3 } );
-				smallSphere2 = new THREE.Mesh( geometry, material_logo3 );
-				scene.add( smallSphere2 );
-
-
-				const texture_logo4 = new THREE.TextureLoader().load( 'textures/logo4.png' );
-				const material_logo4 = new THREE.MeshPhongMaterial( { map: texture_logo4 }, { gradientMap: texture_logo4 } );
-				smallSphere3 = new THREE.Mesh( geometry, material_logo4 );
-				scene.add( smallSphere3 );
-
-				const texture_logo5 = new THREE.TextureLoader().load( 'textures/logo5.png' );
-				const material_logo5 = new THREE.MeshPhongMaterial( { map: texture_logo5 }, { gradientMap: texture_logo5 } );
-				smallSphere4 = new THREE.Mesh( geometry, material_logo5 );
-				scene.add( smallSphere4 );
-
-				// walls
-				const texture4 = new THREE.TextureLoader().load( 'textures/skybox4.png' );
-				const material4 = new THREE.MeshBasicMaterial( { map: texture4 } );
-
-				const planeBack = new THREE.Mesh( planeGeo, material4 );
-				planeBack.position.z = -200;
-				planeBack.position.y = 200;
-				scene.add( planeBack );		
-				
-				const texture2 = new THREE.TextureLoader().load( 'textures/skybox2.png' );
-				const material2 = new THREE.MeshBasicMaterial( { map: texture2 } );
-
-				const planeFront = new THREE.Mesh( planeGeo, material2 );
-				planeFront.position.z = 200;
-				planeFront.position.y = 200;
-				planeFront.rotateY( Math.PI );
-				scene.add( planeFront );
-
-				const texture1 = new THREE.TextureLoader().load( 'textures/skybox1.png' );
-				const material1 = new THREE.MeshBasicMaterial( { map: texture1 } );
-
-				const planeRight = new THREE.Mesh( planeGeo, material1 );
-				planeRight.position.x = 200;
-				planeRight.position.y = 200;
-				planeRight.rotateY( - Math.PI / 2 );
-				scene.add( planeRight );
-
-				const texture3 = new THREE.TextureLoader().load( 'textures/skybox3.png' );
-				const material3 = new THREE.MeshBasicMaterial( { map: texture3 } );
-
-				const planeLeft = new THREE.Mesh( planeGeo, material3 );
-				planeLeft.position.x = - 200;
-				planeLeft.position.y = 200;
-				planeLeft.rotateY( Math.PI / 2 );
-				scene.add( planeLeft );
-
-				// lights
-				const mainLight = new THREE.PointLight( 0xFFFFFF, 2.0, 600 );
-				mainLight.position.y = 260;
-				mainLight.position.x = 50;
-				scene.add( mainLight );
-
-				const greenLight = new THREE.PointLight( 0xAA65FE, 2.0, 1300 );
-				greenLight.position.set( 550, 100, 0 );
-				scene.add( greenLight );
-
-				const redLight = new THREE.PointLight( 0x47E1EB, 2.0, 1300 );
-				redLight.position.set( - 550, 100, 0 );
-				scene.add( redLight );
-
-				const blueLight = new THREE.PointLight( 0x64B2D6, 2.0, 1300 );
-				blueLight.position.set( 0, 100, 550 );
-				scene.add( blueLight );
-
-				const blueLight2 = new THREE.PointLight( 0x64B2D6, 2.0, 1300 );
-				blueLight2.position.set( 0, 100, -550 );
-				scene.add( blueLight2 );
-
-				window.addEventListener( 'resize', onWindowResize, false );
-
-			}
-
-			function onWindowResize() {
-
-				camera.aspect = window.innerWidth / window.innerHeight;
-				camera.updateProjectionMatrix();
-
-				renderer.setSize( window.innerWidth, window.innerHeight );
-
-				groundMirror.getRenderTarget().setSize(
-					window.innerWidth * window.devicePixelRatio,
-					window.innerHeight * window.devicePixelRatio
-				);
-				verticalMirror.getRenderTarget().setSize(
-					window.innerWidth * window.devicePixelRatio,
-					window.innerHeight * window.devicePixelRatio
-				);
-
-			}
-
-			function animate() {
-
-				requestAnimationFrame( animate );
-
-				const timer = Date.now() * 0.01;
-
-				// sphereGroup.rotation.y -= 0.002;
-
-				smallSphere.position.set(
-					Math.cos( timer * 0.01 ) * 80,
-					200,
-					Math.sin( timer * 0.01 ) * 80
-				);
-
-				smallSphere2.position.set(
-					Math.cos( timer * 0.01 + Math.PI / 2) * 80,
-					200,
-					Math.sin( timer * 0.01 + Math.PI / 2 ) * 80
-				);
-
-				smallSphere3.position.set(
-					Math.cos( timer * 0.01 + Math.PI) * 80,
-					200,
-					Math.sin( timer * 0.01 + Math.PI) * 80
-				);
-
-				smallSphere4.position.set(
-					Math.cos( timer * 0.01 + 3 * Math.PI / 2) * 80,
-					200,
-					Math.sin( timer * 0.01 + 3* Math.PI / 2 ) * 80
-				);
-
-
-				// smallSphere.rotation.y = Math.sin( timer * 0.01 );
-				smallSphere.rotation.z =  -timer * 0.01;
-				smallSphere.rotation.x = -timer * 0.05;
-
-				smallSphere2.rotation.z =  timer * 0.01;
-				smallSphere2.rotation.x = -timer * 0.05;
-
-				smallSphere3.rotation.z =  -timer * 0.02;
-				smallSphere3.rotation.x = -timer * 0.05;
-
-				smallSphere4.rotation.z =  -timer * 0.02;
-				smallSphere4.rotation.x = -timer * 0.05;
-
-				renderer.render( scene, camera );
-
-			}
-
-		</script>
-	</body>
+		<div class="col-md-4">
+			<div class="card">
+				<h6 class="card-header bg-primary">
+					Usecase.Text | System.Edit
+				</h6>
+				<div class="card-body">
+					<p class="card-text">
+						Card content
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card">
+				<h6 class="card-header bg-primary">
+					Luxury.Anim | System.Extravagance
+				</h6>
+				<div class="card-body">
+					<p class="card-text">
+						Card content
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
+			<div class="card">
+				<h6 class="card-header bg-primary">
+					Stats.Tool | System.Copy System.Refresh
+				</h6>
+				<div class="card-body">
+					<p class="card-text">
+						Card content
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card">
+				<h6 class="card-header bg-primary">
+					Friends.Text | System.Cherish
+				</h6>
+				<div class="card-body">
+					<p class="card-text">
+						Card content
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	
+      <div class="bs-docs-section">       
+      <footer class="bg-secondary text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-1 pb-1">
+    <!-- Section: Social media -->
+    <section class="mb-0">
+      <!-- Facebook -->
+      <a class="btn btn-outline-primary btn-floating m-1" href="#!" role="button"
+        ><i class="fa fa-facebook-f fa-3x"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-primary btn-floating m-1" href="#!" role="button"
+        ><i class="fa fa-twitter fa-3x"></i
+      ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-primary btn-floating m-1" href="#!" role="button"
+        ><i class="fa fa-google fa-3x"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-primary btn-floating m-1" href="#!" role="button"
+        ><i class="fa fa-instagram fa-3x"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-primary btn-floating m-1" href="#!" role="button"
+        ><i class="fa fa-github fa-3x"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+ 
+</footer>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+    var clockElement = document.getElementById('clock');
+
+    function clock() {
+	clockElement.textContent = new Date().toLocaleString();
+	
+    }
+
+    setInterval(clock, 1000);
+</script>
+  </body>
 </html>
