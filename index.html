@@ -10,9 +10,9 @@
   <link href="/css/solid.css" rel="stylesheet">
   </head>
   <body>
- <nav class="navbar fixed-top navbar-dark bg-primary navbar-expand-md border-0 justify-content-center">
-    <div class="container">
-        <a href="/" class="navbar-brand d-flex w-50 me-auto"><img src="/img/dithered_Collar_logo.png" alt="" width="170" height="42"></a>
+ <nav class="navbar fixed-top navbar-dark bg-primary navbar-expand-md border-0 justify-content-center p-1">
+    <div class="container p-0">
+        <span class="navbar-brand d-flex w-50 me-auto"><img src="/img/dithered_Collar_logo.png" alt="" width="170" height="42"></span>
 	
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsingNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -182,7 +182,7 @@
             clockElement.textContent = date.toLocaleTimeString();
         } else {
             // While this format will be used for larger windows.
-            clockElement.textContent = date.toDateString();
+            clockElement.textContent = date.toLocaleString();
         }
 	
     }
