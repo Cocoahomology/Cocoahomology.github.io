@@ -7089,6 +7089,10 @@ fieldset:disabled .btn {
   left: 0 !important;
 }
 
+.start-3 {
+  left: 3% !important;
+}
+
 .start-50 {
   left: 50% !important;
 }
