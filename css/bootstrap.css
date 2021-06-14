@@ -7061,8 +7061,8 @@ fieldset:disabled .btn {
   top: 0 !important;
 }
 
-.top-n5 {
-  top: -5% !important;
+.top-ns {
+  top: -7% !important;
 }
 
 .top-50 {
@@ -7089,8 +7089,8 @@ fieldset:disabled .btn {
   left: 0 !important;
 }
 
-.start-2 {
-  left: 2% !important;
+.start-1 {
+  left: 1% !important;
 }
 
 .start-50 {
