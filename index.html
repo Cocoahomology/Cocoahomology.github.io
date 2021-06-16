@@ -30,20 +30,20 @@
 					</li>
 				</ul>
 				<ul class="nav navbar-nav w-100 ms-auto justify-content-end">
+					<li class="nav-item ms-auto ms-lg-0 me-auto me-lg-0">
+						<a class="nav-link" href="#">
+						DOCS
+						</a>
+					</li>
 					<li class="nav-item ms-auto ms-lg-0 me-auto me-lg-0 d-none d-lg-inline d-xl-none">
 						<a class="btn btn-outline-primary pe-2" href="#!" role="button">
 						<i class="fab fa-github">
 						</i>
 						</a>
 					</li>
-					<li class="nav-item ms-auto ms-lg-0 me-auto me-lg-0 d-lg-none d-xl-inline">
+					<li class="nav-item ms-auto ms-lg-0 me-auto me-lg-0 px-2 d-lg-none d-xl-inline">
 						<a class="nav-link" href="#">
 						GITHUB
-						</a>
-					</li>
-					<li class="nav-item ms-auto ms-lg-0 me-auto me-lg-0 px-2">
-						<a class="nav-link" href="#">
-						DOCS
 						</a>
 					</li>
 					<li class="nav-item dropdown ms-auto ms-lg-0 me-auto me-lg-3">
@@ -263,15 +263,15 @@
 									<div class="card-body">
 										<div class="container-fluid px-sm-3 p-0 m-0">
 											<div class="row justify-content-center">
-												<div class="col-md-9 p-0 p-sm-3 m-0">
+												<div class="col-md-9 p-0 p-sm-3 pt-2 m-0">
 													<div class="container-fluid rounded-3 shadow-lg border border-3 border-secondary mb-5 p-1 px-2 pb-0 px-sm-4">
-														<div class="row text-secondary p-1 pb-0 py-sm-2 align-items-center">
+														<div class="row text-secondary p-1 pb-0 align-items-center">
 															<div class="col-lg-6 p-1 pb-0">
 																<strong>
 																Collar does not use lending pools.
 																</strong>
 																<p class="fs-5 pt-1">
-																When depositing collateral into the Collar vault, two option contracts on it are minted. The borrower keeps an option that gives them the right to re-pay the loan, and they borrow directly from a lender in exchange for giving them interest and an option that gives the lender the right to the debt.
+																When depositing collateral into the Collar vault, two option contracts on it are minted. One option goes to the borrower and gives them the right to re-pay the loan. The second option goes to the lender and gives them the right to the debt.
 																</p>
 															</div>
 															<div class="col-lg-6 p-1">
@@ -284,13 +284,13 @@
 											<div class="row justify-content-center">
 												<div class="col-md-9 p-0 p-sm-3 m-0">
 													<div class="container-fluid rounded-3 shadow-lg border border-3 border-secondary mb-5 p-1 px-2 pb-0 px-sm-4">
-														<div class="row text-secondary p-1 pb-0 py-sm-2 align-items-center">
+														<div class="row text-secondary p-1 pb-0 align-items-center">
 															<div class="col-lg-6 p-1 pb-0">
 																<strong>
 																Every loan has an expiration date.
 																</strong>
 																<p class="fs-5 pt-1">
-																Before the expiration date, the borrower can re-pay their loan to retrieve their locked collateral. After the expiration date, the lender can collect the re-paid loan or the defaulted collateral, whichever the Collar vault contains.
+																Before the expiration date, the borrower can use their option to re-pay their loan and retrieve their locked collateral. After the expiration date, the lender can use their option to collect the re-paid loan or the defaulted collateral, whichever the Collar vault contains.
 																</p>
 															</div>
 															<div class="col-lg-6 p-1">
@@ -303,7 +303,7 @@
 											<div class="row justify-content-center">
 												<div class="col-md-9 p-0 p-sm-3 m-0">
 													<div class="container-fluid rounded-3 shadow-lg border border-3 border-secondary mb-5 p-1 px-2 pb-0 px-sm-4">
-														<div class="row text-secondary p-1 pb-0 py-sm-2 align-items-center">
+														<div class="row text-secondary p-1 pb-0 align-items-center">
 															<div class="col-lg-6 p-1 pb-0">
 																<strong>
 																Collar is decentralized insurance for stablecoins.
