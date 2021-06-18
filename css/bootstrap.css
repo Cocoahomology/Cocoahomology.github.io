@@ -3302,29 +3302,29 @@ fieldset:disabled .btn {
 
 .btn-light:hover {
   color: #fff;
-  background-color: #214dd9;
-  border-color: #1f49cc;
+  background-color: #6e8dbf;
+  border-color: #7896c4;
 }
 
 .btn-check:focus + .btn-light, .btn-light:focus {
   color: #fff;
-  background-color: #214dd9;
-  border-color: #1f49cc;
-  box-shadow: 0 0 0 0.25rem rgba(71, 116, 255, 0.5);
+  background-color: #6e8dbf;
+  border-color: #6385bb;
+  box-shadow: 0 0 0 0.25rem rgba(48, 93, 164, 0.5);
 }
 
 .btn-check:checked + .btn-light,
 .btn-check:active + .btn-light, .btn-light:active, .btn-light.active,
 .show > .btn-light.dropdown-toggle {
   color: #fff;
-  background-color: #1f49cc;
-  border-color: #1d44bf;
+  background-color: #6385bb;
+  border-color: #587cb6;
 }
 
 .btn-check:checked + .btn-light:focus,
 .btn-check:active + .btn-light:focus, .btn-light:active:focus, .btn-light.active:focus,
 .show > .btn-light.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.25rem rgba(71, 116, 255, 0.5);
+  box-shadow: 0 0 0 0.25rem rgba(48, 93, 164, 0.5);
 }
 
 .btn-light:disabled, .btn-light.disabled {
@@ -7089,8 +7089,8 @@ fieldset:disabled .btn {
   left: 0 !important;
 }
 
-.start-1 {
-  left: 1% !important;
+.start-2 {
+  left: 2% !important;
 }
 
 .start-50 {
