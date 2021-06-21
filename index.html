@@ -142,7 +142,28 @@
 						</div>
 						<div class="row pb-4 gx-2 gy-4 justify-content-center">
 							<div class="col-md-3 col-9 align-self-stretch">
-								<div class="card h-100">
+									<div class="card h-100 d-md-none">
+									<h6 class="card-header bg-primary">
+									Style97.Clip
+									</h6>
+									<img src="/img/tailorbw2.gif" class="card-img w-100 p-0 m-0" alt="">
+									<div class="card-img-overlay">
+										<div class="card-body p-0">
+										</div>
+									</div>
+								</div>
+								<div class="card h-50 d-none d-md-flex">
+									<h6 class="card-header bg-primary">
+									Style97.Clip
+									</h6>
+									<img src="/img/tailorbw2.gif" class="card-img h-100 p-0 m-0 d-none d-md-block" alt="">
+									<img src="/img/tailorbw2.gif" class="card-img w-100 p-0 m-0 d-md-none" alt="">
+									<div class="card-img-overlay">
+										<div class="card-body p-0">
+										</div>
+									</div>
+								</div>
+								<div class="card h-50 d-none d-md-flex">
 									<h6 class="card-header bg-primary">
 									Style97.Clip
 									</h6>
@@ -164,7 +185,7 @@
 									</h6>
 									<div class="card-body">
 										<div class = "container-fluid p-0 m-0">
-											<div class = "row p-0 mx-sm-2 p-sm-4 align-items-center px-1 py-4 mb-5 mt-2 rounded-3 shadow-lg border border-3 border-secondary">
+											<div class = "row p-0 mx-sm-2 p-sm-4 align-items-center px-1 py-4 mb-5 mt-3 rounded-3 shadow-lg border border-3 border-secondary">
 												<div class = "col-lg-2 col-sm-4 col-3 p-0 p-sm-1">
 													<img src="/img/icon1.svg" alt="" class="rounded-circle w-100 ms-2 ms-xxl-4">
 													</img>
@@ -227,7 +248,7 @@
 												</div>
 											</div>
 										<div class="container-fluid p-0 m-0">
-											<div class="row text-center p-1 pb-3 pt-0 m-0">
+											<div class="row text-center p-1 pt-0 m-0 mb-3">
 												<div class="col">
 													<button type="button" class="btn-lg btn-light m-2">Learn More</button>
 												</div>
@@ -238,8 +259,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="row pb-4 gx-2">
-							<div class="col-12">
+						<div class="row pb-4 gx-2 justify-content-center">
+							<div class="col-md-9">
 								<div class="card">
 									<h6 class="card-header bg-primary d-none d-sm-inline">
 									Outfit.Anim | System.Select
@@ -256,7 +277,7 @@
 							</div>
 						</div>
 						<div class="row pb-4 gx-2 justify-content-center">
-							<div class="col">
+							<div class="col-md-9">
 								<div class="card">
 									<h6 class="card-header bg-primary d-none d-sm-inline">
 									Explain.Plot | System.Detail
@@ -265,74 +286,56 @@
 									Explain.Plot
 									</h6>
 									<div class="card-body">
-										<div class="container-fluid px-sm-3 p-0 m-0">
-											<div class="row justify-content-center">
-												<div class="col-md-10 p-0 p-sm-3 pt-2 m-0">
-													<div class="container-fluid rounded-3 shadow-lg border border-3 border-secondary mb-5 p-1 px-2 pb-0 px-sm-4">
-														<div class="row text-secondary p-2 pb-0 align-items-center">
-															<div class="col-lg-6 p-1 pb-0">
-																<strong>
-																Collar does not use lending pools.
-																</strong>
-																<p class="fs-5 pt-1">
-																When collateral is deposited into the Collar vault, two option contracts on it are minted. The borrower keeps the option that grants them the right to re-pay their loan, and gives the option that grants the right to the debt to a lender in exchange for their desired asset.
-																</p>
-															</div>
-															<div class="col-lg-6 p-1">
-															<img src="/img/1000.png" class="card-img-fluid mw-100 p-3 m-0" alt="">
-															</div>
-														</div>
-													</div>
+										<div class="container-fluid p-0 m-0">
+											<div class="row p-0 mx-sm-2 p-sm-2 px-1 py-4 py-sm-4 mb-5 mt-3 rounded-3 shadow-lg border border-3 border-secondary text-secondary align-items-center">
+												<div class="col-lg-6 p-1 pb-0">
+													<strong>
+													Collar uses options to facilitate loans.
+													</strong>
+													<p class="fs-5 pb-0 pt-1">
+													When collateral is deposited into the Collar vault, two option contracts on it are minted. The borrower keeps an option (CALL) that grants them the right to re-pay their loan, and gives an option (COLL) that grants the right to the debt to a lender in exchange for assets.
+													</p>
+												</div>
+												<div class="col-lg-6 p-1">
+													<img src="/img/1000.png" class="card-img-fluid mw-100 p-3 m-0" alt="">
+												</div>
+											</div>			
+											<div class="row p-0 mx-sm-2 p-sm-2 px-1 py-4 py-sm-4 mb-5 mt-2 rounded-3 shadow-lg border border-3 border-secondary text-secondary align-items-center">
+												<div class="col-lg-6 p-1 pb-0">
+													<strong>
+													Every loan has an expiration date.
+													</strong>
+													<p class="fs-5 pb-0 pt-1">
+													Before the expiration date, the borrower can use the CALL option to re-pay their loan and retrieve their locked collateral. After the expiration date, the lender can use the COLL option to collect the re-paid loan or the defaulted collateral, whichever the Collar vault contains.
+													</p>
+												</div>
+												<div class="col-lg-6 p-1">
+													<img src="/img/1000.png" class="card-img-fluid mw-100 p-3 m-0" alt="">
 												</div>
 											</div>
-											<div class="row justify-content-center">
-												<div class="col-md-10 p-0 p-sm-3 m-0">
-													<div class="container-fluid rounded-3 shadow-lg border border-3 border-secondary mb-5 p-1 px-2 pb-0 px-sm-4">
-														<div class="row text-secondary p-2 pb-0 align-items-center">
-															<div class="col-lg-6 p-1 pb-0">
-																<strong>
-																Every loan has an expiration date.
-																</strong>
-																<p class="fs-5 pt-1">
-																Before the expiration date, the borrower can use their option to re-pay their loan and retrieve their locked collateral. After the expiration date, the lender can use their option to collect the re-paid loan or the defaulted collateral, whichever the Collar vault contains.
-																</p>
-															</div>
-															<div class="col-lg-6 p-1">
-															<img src="/img/1000.png" class="card-img-fluid mw-100 p-3 m-0" alt="">
-															</div>
-														</div>
-													</div>
+											<div class="row p-0 mx-sm-2 p-sm-2 px-1 py-4 py-sm-4 mb-5 mt-2 rounded-3 shadow-lg border border-3 border-secondary text-secondary align-items-center">
+												<div class="col-lg-6 p-1 pb-0">
+													<strong class="d-none d-sm-block">
+													Collar is decentralized insurance for stablecoins.
+													</strong>
+													<strong class="d-sm-none">
+													Collar is DeFi's insurance for stablecoins.
+													</strong>
+													<p class="fs-5 pb-0 pt-1">
+													In return for the fixed interest the borrower pays, the lender takes on the risk of asset de-pegging. There is no penalty for borrowers if they default their loans, and lenders are always guaranteed to collect on their loans after the expiration date.
+													</p>
 												</div>
-											</div>
-											<div class="row justify-content-center">
-												<div class="col-md-10 p-0 p-sm-3 m-0">
-													<div class="container-fluid rounded-3 shadow-lg border border-3 border-secondary mb-5 p-1 px-2 pb-0 px-sm-4">
-														<div class="row text-secondary p-2 pb-0 align-items-center">
-															<div class="col-lg-6 p-1 pb-0">
-																<strong class="d-none d-sm-block">
-																Collar is decentralized insurance for stablecoins.
-																</strong>
-																<strong class="d-sm-none">
-																Collar is DeFi's insurance for stablecoins.
-																</strong>
-																<p class="fs-5 pt-1">
-																In return for the fixed interest the borrower pays, the lender takes on the risk of asset de-pegging. There is no penalty for borrowers if they default their loans, and lenders are always guaranteed to collect on their loans after the expiration date.
-																</p>
-															</div>
-															<div class="col-lg-6 p-1">
-															<img src="/img/1000.png" class="card-img-fluid mw-100 p-3 m-0" alt="">
-															</div>
-														</div>
-													</div>
+												<div class="col-lg-6 p-1">
+													<img src="/img/1000.png" class="card-img-fluid mw-100 p-3 m-0" alt="">
 												</div>
 											</div>
 											<div class="container-fluid p-0 m-0">
-											<div class="row text-center p-1 pb-3 pt-0">
-												<div class="col">
-													<button type="button" class="btn-lg btn-light m-2">Learn More</button>
+												<div class="row text-center p-1 pt-0 m-0 mb-3">
+													<div class="col">
+														<button type="button" class="btn-lg btn-light m-2">Learn More</button>
+													</div>
 												</div>
 											</div>
-										</div>
 										</div>
 									</div>
 								</div>
@@ -349,15 +352,15 @@
 									</h6>
 									<div class="card-body">
 										<div class="container-fluid p-sm-2 p-0 m-0">
-											<div class="row m-0 mb-3">
+											<div class="row m-0 my-3">
 												<div class="col-md-12 p-0 m-0 text-secondary">
-													<h1 class=" p-1 py-4 d-none d-sm-block text-center ">Use Collar to efficiently...</h1>
-													<h2 class=" p-0 py-3 d-sm-none lh-lg">Use Collar to efficiently...</h2>
+													<h1 class=" p-1 d-none d-sm-block text-center ">Use Collar to efficiently...</h1>
+													<h2 class=" p-0 d-sm-none lh-lg">Use Collar to efficiently...</h2>
 												</div>
 											</div>
-											<div class="row">
+											<div class="row mb-3">
 												<div class="col-lg-4 p-0 p-sm-3 m-0">
-													<div class="container-fluid rounded-3 shadow-lg border border-3 border-secondary mb-5 p-1 pb-0 pb-sm-3 px-sm-4">
+													<div class="container-fluid rounded-3 shadow-lg border border-3 border-secondary p-1 pb-0 pb-sm-3 px-sm-4">
 													<div class="row p-1 mt-2 align-items-center">
 														<div class = "col-4 col-sm-3 col-lg-4 m-0">
 														<img src="/img/icon5.svg" alt="" class="img-max-150 p-0 p-sm-1">
@@ -375,7 +378,7 @@
 													</div>
 												</div>
 												<div class="col-lg-4 p-0 p-sm-3 m-0">
-													<div class="container-fluid rounded-3 shadow-lg border border-3 border-secondary mb-5 p-1 pb-0 pb-sm-3 px-sm-4">
+													<div class="container-fluid rounded-3 shadow-lg border border-3 border-secondary p-1 pb-0 pb-sm-3 px-sm-4">
 														<div class="row p-1 mt-2 align-items-center">
 														<div class = "col-4 col-sm-3 col-lg-4 m-0">
 														<img src="/img/icon6.svg" alt="" class="img-max-150 p-0 p-sm-1">
@@ -393,7 +396,7 @@
 													</div>
 												</div>
 												<div class="col-lg-4 p-0 p-sm-3 m-0">
-													<div class="container-fluid rounded-3 shadow-lg border border-3 border-secondary mb-2 p-1 pb-0 pb-sm-3 px-sm-4">
+													<div class="container-fluid rounded-3 shadow-lg border border-3 border-secondary p-1 pb-0 pb-sm-3 px-sm-4">
 														<div class="row p-1 mt-2 align-items-center">
 														<div class = "col-4 col-sm-3 col-lg-4 m-0">
 														<img src="/img/icon7.svg" alt="" class="img-max-150 p-0 p-sm-1">
