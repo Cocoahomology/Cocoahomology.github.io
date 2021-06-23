@@ -4273,7 +4273,7 @@ fieldset:disabled .btn {
   padding-top: 0rem;
   padding-bottom: 0rem;
   margin-right: 1rem;
-  font-size: 1.8rem;
+  font-size: 1.75rem;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -7062,7 +7062,7 @@ fieldset:disabled .btn {
 }
 
 .top-ns {
-  top: -27% !important;
+  top: -30% !important;
 }
 
 .top-50 {
@@ -7089,8 +7089,8 @@ fieldset:disabled .btn {
   left: 0 !important;
 }
 
-.start-2 {
-  left: 2% !important;
+.start-t {
+  left: 10% !important;
 }
 
 .start-50 {
@@ -7834,7 +7834,7 @@ fieldset:disabled .btn {
 }
 
 .pt-25 {
-  padding-top: 0.75rem !important;
+  padding-top: 0.8rem !important;
 }
 
 .pt-3 {
