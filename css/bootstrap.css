@@ -7062,7 +7062,7 @@ fieldset:disabled .btn {
 }
 
 .top-ns {
-  top: -15% !important;
+  top: -27% !important;
 }
 
 .top-50 {
@@ -7831,6 +7831,10 @@ fieldset:disabled .btn {
 
 .pt-2 {
   padding-top: 0.5rem !important;
+}
+
+.pt-25 {
+  padding-top: 0.75rem !important;
 }
 
 .pt-3 {
