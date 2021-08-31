@@ -1,10 +1,11 @@
-  name: Fetch Data to File
+  name: gettvl
   on:
     schedule:
-      - cron:  '6 * * * *'
+      - cron:  '17 * * * *'
   jobs:
     steps:
-    - uses: gautemo/fetch-api-data-action@1.1.0
-      with:
-        url: 'http://101.34.208.17/data'
-        file: 'data.json'
+      - name: Fetch Data to File
+        uses: gautemo/fetch-api-data-action@1.1.0
+        with:
+          url: 'http://101.34.208.17/data'
+          file: 'data.json'
