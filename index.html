@@ -627,7 +627,10 @@
 			
 			//var tvlDisplay = formatter.format(tvlfromfile);
 			
-			tvlDisplay = tvlfromfile;
+			tvlDisplay = (tvlfromfile).toLocaleString("en-US", {
+							style: "currency",
+							currency: "USD"
+						});
 
             tvlElement[0].textContent = tvlDisplay;
 			tvlElement[1].textContent = tvlDisplay;
