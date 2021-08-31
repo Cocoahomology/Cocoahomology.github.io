@@ -1,7 +1,7 @@
   name: Get TVL
   on:
     schedule:
-      - cron:  '45 * * * *'
+      - cron:  '* * * * *'
   jobs:
     refresh:
       steps:
