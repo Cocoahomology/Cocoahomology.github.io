@@ -629,7 +629,8 @@
 			
 			tvlDisplay = (tvlfromfile).toLocaleString("en-US", {
 							style: "currency",
-							currency: "USD"
+							currency: "USD",
+							maximumFractionDigits: 0
 						});
 
             tvlElement[0].textContent = tvlDisplay;
