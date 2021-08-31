@@ -1,3 +1,4 @@
+  name: Get TVL
   on:
     schedule:
       - cron:  '17 * * * *'
