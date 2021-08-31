@@ -1,7 +1,7 @@
   name: Get TVL       
   on:
     schedule:
-      - cron:  '20,50 * * * *'
+      - cron:  '0 0 * * *'
   jobs:
     refresh:
       runs-on: ubuntu-latest
