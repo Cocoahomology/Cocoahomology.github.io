@@ -461,13 +461,16 @@
 									<div class="card-body">
 										<div class="container-fluid col-xxl-8 px-md-4 px-2 pt-5 pb-4 mt-2 mb-0">
 											<div class="row flex-lg-row-reverse g-5 pt-4 pb-1 justify-content-center align-items-center rounded-3 shadow-lg border border-3 border-secondary bg-gradient bg-secondary">
-												<div class="d-flex col-lg-8 my-1 mb-3 p-3 pb-0 m-0">
+												<div class="d-flex col-lg-8 my-2 mb-3 p-0 m-0">
 													<div class = "mx-auto">
-													<h1 class="display-3 lh-base text-white d-none d-sm-inline">
-													<span id="tvl"></span>
+													<h1 class="display-2 lh-base text-white d-none d-xl-inline">
+													<span class="tvl"></span>
 													</h1>
-													<h1 class="lh-base text-white d-inline d-sm-none">
-													<span id="tvl"></span>
+													<h1 class="display-3 lh-base text-white d-none d-sm-inline d-xl-none">
+													<span class="tvl"></span>
+													</h1>
+													<h1 class="display-4 text-white d-inline d-sm-none">
+													<span class="tvl"></span>
 													</hi>
 													</div>
 												</div>
@@ -608,7 +611,7 @@
 	
 	<script>
 	$.getJSON( "data/data.json", function( tvlJSON ) {
-	var tvlElement = document.getElementById('tvl');
+	var tvlElement = document.querySelectorAll("span.tvl");
 
 		function tvl() {
 			var tvlfromfile = tvlJSON.tvl;
@@ -622,14 +625,10 @@
 			
 			var tvlDisplay = formatter.format(tvlfromfile);
 
-			// Replace '400px' below with where you want the format to change.
-			if (window.matchMedia('(max-width: 480px)').matches) {
-            // Use this format for windows with a width up to the value above.
-            tvlElement.textContent = tvlDisplay;
-			} else {
-            // While this format will be used for larger windows.
-            tvlElement.textContent = tvlDisplay;
-			}
+            tvlElement[0].textContent = tvlDisplay;
+			tvlElement[1].textContent = tvlDisplay;
+			tvlElement[2].textContent = tvlDisplay;
+
 		}
 		tvl();
 		});
