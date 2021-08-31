@@ -1,17 +1,4 @@
-  name: Get TVL
-  on:
-    schedule:
-      - cron:  '26 * * * *'
-  jobs:
-    refresh:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Fetch Data to File
-          uses: gautemo/fetch-api-data-action@1.1.0
-          with:
-            url: 'http://101.34.208.17/data'
-            file: 'tvl/data.json'
-            
+  name: Get TVL       
   on: workflow_dispatch
   jobs:
     refresh:
