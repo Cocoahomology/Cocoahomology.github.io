@@ -616,15 +616,18 @@
 
 		function tvl() {
 			var tvlfromfile = tvlJSON.tvl;
-			
+			/*
 			var formatter = new Intl.NumberFormat('en-US', {
 			  style: 'currency',
 			  currency: 'USD',
 			  
 			  maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
 			});
+			*/
 			
-			var tvlDisplay = formatter.format(tvlfromfile);
+			//var tvlDisplay = formatter.format(tvlfromfile);
+			
+			tvlDisplay = tvlfromfile;
 
             tvlElement[0].textContent = tvlDisplay;
 			tvlElement[1].textContent = tvlDisplay;
