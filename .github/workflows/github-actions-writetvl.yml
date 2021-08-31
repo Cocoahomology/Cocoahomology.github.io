@@ -1,4 +1,4 @@
-  name: gettvl
+  name: github-actions-writetvl
   on:
     schedule:
       - cron:  '17 * * * *'
