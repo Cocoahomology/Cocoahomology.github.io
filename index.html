@@ -609,7 +609,8 @@
 	<script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
 	
-	<script>
+	<script type="text/javascript">
+	$(document).ready(function() {
 	$.getJSON( "data/data.json", function( tvlJSON ) {
 	var tvlElement = document.querySelectorAll("span.tvl");
 
@@ -631,6 +632,7 @@
 
 		}
 		tvl();
+		});
 		});
 	</script>
 	
