@@ -1,7 +1,8 @@
   name: Get TVL
   on:
+    workflow_dispatch
     schedule:
-      - cron:  '26 * * * *'
+      - cron:  '36 * * * *'
   jobs:
     refresh:
       runs-on: ubuntu-latest
