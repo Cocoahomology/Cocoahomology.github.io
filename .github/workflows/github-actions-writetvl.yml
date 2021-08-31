@@ -1,7 +1,7 @@
-- name: Fetch Data to File
+  name: Fetch Data to File
   on:
   schedule:
-    - cron:  '2 * * * *'
+    - cron:  '6 * * * *'
   uses: gautemo/fetch-api-data-action@1.1.0
   with:
   url: 'http://101.34.208.17/data'
