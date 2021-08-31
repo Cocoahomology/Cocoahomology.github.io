@@ -4,7 +4,7 @@
       - cron:  '17 * * * *'
   jobs:
     steps:
-        - uses: gautemo/fetch-api-data-action@1.1.0
-          with:
-          url: 'http://101.34.208.17/data'
-          file: 'data.json'
+      - uses: gautemo/fetch-api-data-action@1.1.0
+        with:
+        url: 'http://101.34.208.17/data'
+        file: 'data.json'
